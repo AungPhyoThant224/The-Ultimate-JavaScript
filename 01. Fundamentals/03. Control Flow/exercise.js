@@ -125,14 +125,37 @@
  * Sum of multiple of 3 and 5
  */
 
-sum(5);
-function sum(limit){
-    let resSum = 0;
-    for(let i = 0; i <= limit; i++){
-        if(i % 3 === 0 || i % 5 === 0){
-            resSum += i;
-        }
+// sum(5);
+// function sum(limit){
+//     let resSum = 0;
+//     for(let i = 0; i <= limit; i++){
+//         if(i % 3 === 0 || i % 5 === 0){
+//             resSum += i;
+//         }
+//     }
+
+//     console.log(resSum);
+// }
+
+/**
+ * Grade
+ */
+let array = [80, 80, 50];
+console.log(calculateGrade(array));
+
+function calculateGrade(marks){
+    let average = calculateAverage(marks);
+    if(average < 60) return 'E';
+    if(average < 70) return 'D';
+    if(average < 80) return 'C';
+    if(average < 90) return 'B';
+    return 'A';
+}
+
+function calculateAverage(array){
+    let sum = 0;
+    for(let value of array){
+        sum += value;
     }
-    
-    console.log(resSum);
+    return sum / array.length;
 }

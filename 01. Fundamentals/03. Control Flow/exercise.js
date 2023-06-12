@@ -51,23 +51,33 @@
  * Math.floor()
  * 12 points -> suspended
  */
-console.log(checkSpeed(80));
-function checkSpeed(speed){
-    const speedLimit = 70;
-    const kmPerPoint = 5;
-    if(speed < speedLimit + kmPerPoint){
-        return 'OK';
-    }
+// console.log(checkSpeed(80));
+// function checkSpeed(speed){
+//     const speedLimit = 70;
+//     const kmPerPoint = 5;
+//     if(speed < speedLimit + kmPerPoint){
+//         return 'OK';
+//     }
 
-    let point = Math.floor((speed - speedLimit) / 5);
-    if(point >= 12){
-        return 'License Suspended'
-    }
-    else if (point == 1){
-        return point + ' point';
-    }
+//     let point = Math.floor((speed - speedLimit) / 5);
+//     if(point >= 12){
+//         return 'License Suspended'
+//     }
+//     else if (point == 1){
+//         return point + ' point';
+//     }
 
-    return point + ' points';
+//     return point + ' points';
+// }
 
-    
+/**
+ * Even and Odd Numbers
+ */
+
+showNumbers(10);
+function showNumbers(limit){
+    for(i = 0 ; i <= limit; i++){
+        const message = (i % 2 === 0) ? "Even" : "Odd";
+        console.log(i, message);
+    }
 }

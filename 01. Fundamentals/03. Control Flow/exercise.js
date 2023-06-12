@@ -105,18 +105,34 @@
 /**
  * String Properties
  */
-let movie = {
-    title: 'a',
-    rating: 5,
-    releaseYear: 2018,
-    director: 'b'
-}
-showProperties(movie);
+// let movie = {
+//     title: 'a',
+//     rating: 5,
+//     releaseYear: 2018,
+//     director: 'b'
+// }
+// showProperties(movie);
 
-function showProperties(obj) {
-    for(let key in obj){
-        if(typeof obj[key] == 'string'){
-            console.log(key, obj[key]);
+// function showProperties(obj) {
+//     for(let key in obj){
+//         if(typeof obj[key] == 'string'){
+//             console.log(key, obj[key]);
+//         }
+//     }
+// }
+
+/**
+ * Sum of multiple of 3 and 5
+ */
+
+sum(5);
+function sum(limit){
+    let resSum = 0;
+    for(let i = 0; i <= limit; i++){
+        if(i % 3 === 0 || i % 5 === 0){
+            resSum += i;
         }
     }
+    
+    console.log(resSum);
 }

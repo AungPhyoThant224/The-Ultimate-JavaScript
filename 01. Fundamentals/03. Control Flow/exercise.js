@@ -73,11 +73,31 @@
 /**
  * Even and Odd Numbers
  */
+// showNumbers(10);
+// function showNumbers(limit){
+//     for(i = 0 ; i <= limit; i++){
+//         const message = (i % 2 === 0) ? "Even" : "Odd";
+//         console.log(i, message);
+//     }
+// }
 
-showNumbers(10);
-function showNumbers(limit){
-    for(i = 0 ; i <= limit; i++){
-        const message = (i % 2 === 0) ? "Even" : "Odd";
-        console.log(i, message);
+/**
+ * Count Truthy
+ * 
+ * undefined
+ * null
+ * ''
+ * false
+ * 0
+ * Nan
+ */
+countTruthy([false, 0, 1, NaN, 2, '', 3, undefined, null])
+function countTruthy(array){
+    let count = 0;
+    for(let item of array){
+        if(item){
+            count++;
+        }
     }
+    console.log(count);
 }

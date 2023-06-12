@@ -140,22 +140,34 @@
 /**
  * Grade
  */
-let array = [80, 80, 50];
-console.log(calculateGrade(array));
+// let array = [80, 80, 50];
+// console.log(calculateGrade(array));
 
-function calculateGrade(marks){
-    let average = calculateAverage(marks);
-    if(average < 60) return 'E';
-    if(average < 70) return 'D';
-    if(average < 80) return 'C';
-    if(average < 90) return 'B';
-    return 'A';
-}
+// function calculateGrade(marks){
+//     let average = calculateAverage(marks);
+//     if(average < 60) return 'E';
+//     if(average < 70) return 'D';
+//     if(average < 80) return 'C';
+//     if(average < 90) return 'B';
+//     return 'A';
+// }
 
-function calculateAverage(array){
-    let sum = 0;
-    for(let value of array){
-        sum += value;
+// function calculateAverage(array){
+//     let sum = 0;
+//     for(let value of array){
+//         sum += value;
+//     }
+//     return sum / array.length;
+// }
+
+/**
+ * Stars
+ */
+showStars(3);
+function showStars(rows){
+    let star = '';
+    for(let i = 1; i <= rows; i++){
+        star += '*';
+        console.log(star);
     }
-    return sum / array.length;
 }

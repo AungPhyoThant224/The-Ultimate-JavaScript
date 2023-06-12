@@ -23,22 +23,51 @@
  * Not Divisble by both => input,
  * Not a number => 'Not a number'
  */
-console.log(fizzBuzz("7"));
-function fizzBuzz(input) {
-    if(typeof(input) != 'number'){
-        return NaN;
+// console.log(fizzBuzz("7"));
+// function fizzBuzz(input) {
+//     if(typeof(input) != 'number'){
+//         return NaN;
+//     }
+
+//     if(input % 3 === 0 && input % 5 === 0){
+//         return 'FizzBuzz';
+//     }
+//     else if(input % 3 === 0){
+//         return 'Fizz';
+//     }
+//     else if(input % 5 === 0){
+//         return 'Buzz';
+//     }
+//     else{
+//         return input;
+//     }
+// }
+
+/**
+ * Demerit Point
+ * 
+ * Speed Limit => 70
+ * 5 -> 1 point
+ * Math.floor()
+ * 12 points -> suspended
+ */
+console.log(checkSpeed(80));
+function checkSpeed(speed){
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+    if(speed < speedLimit + kmPerPoint){
+        return 'OK';
     }
 
-    if(input % 3 === 0 && input % 5 === 0){
-        return 'FizzBuzz';
+    let point = Math.floor((speed - speedLimit) / 5);
+    if(point >= 12){
+        return 'License Suspended'
     }
-    else if(input % 3 === 0){
-        return 'Fizz';
+    else if (point == 1){
+        return point + ' point';
     }
-    else if(input % 5 === 0){
-        return 'Buzz';
-    }
-    else{
-        return input;
-    }
+
+    return point + ' points';
+
+    
 }

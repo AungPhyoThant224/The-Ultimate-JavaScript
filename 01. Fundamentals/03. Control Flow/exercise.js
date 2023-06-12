@@ -91,13 +91,32 @@
  * 0
  * Nan
  */
-countTruthy([false, 0, 1, NaN, 2, '', 3, undefined, null])
-function countTruthy(array){
-    let count = 0;
-    for(let item of array){
-        if(item){
-            count++;
+// countTruthy([false, 0, 1, NaN, 2, '', 3, undefined, null])
+// function countTruthy(array){
+//     let count = 0;
+//     for(let item of array){
+//         if(item){
+//             count++;
+//         }
+//     }
+//     console.log(count);
+// }
+
+/**
+ * String Properties
+ */
+let movie = {
+    title: 'a',
+    rating: 5,
+    releaseYear: 2018,
+    director: 'b'
+}
+showProperties(movie);
+
+function showProperties(obj) {
+    for(let key in obj){
+        if(typeof obj[key] == 'string'){
+            console.log(key, obj[key]);
         }
     }
-    console.log(count);
 }

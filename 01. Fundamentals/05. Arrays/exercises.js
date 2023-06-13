@@ -89,13 +89,26 @@
  * Count Occurrences
  */
 
-console.log(countOccurrences([1, 2, 3, 4, 1], 1));
-function countOccurrences(array, searchElement) {
-  const result = array.reduce((accumulate, current) => {
-    if (current === searchElement) {
-      accumulate++;
-    }
-    return accumulate;
-  }, 0);
-  return result;
+// console.log(countOccurrences([1, 2, 3, 4, 1], 1));
+// function countOccurrences(array, searchElement) {
+//   const result = array.reduce((accumulate, current) => {
+//     if (current === searchElement) {
+//       accumulate++;
+//     }
+//     return accumulate;
+//   }, 0);
+//   return result;
+// }
+
+/**
+ * Get Max
+ */
+console.log(getMax([1, 2, 13, 4, 10, 20]));
+function getMax(array) {
+  if (array.length === 0) {
+    return;
+  }
+  let max = array.reduce(
+    (accumulator, current) => (current > accumulator) ? current : accumulator);
+  return max;
 }

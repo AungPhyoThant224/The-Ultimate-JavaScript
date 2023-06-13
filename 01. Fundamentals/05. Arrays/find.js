@@ -45,7 +45,6 @@ const course = courses.find(function (course) {
 console.log(course);
 
 const courseIndex = courses.findIndex(function (course) {
-  console.log(course.name);
   return course.name === "b";
 });
 console.log(courseIndex);

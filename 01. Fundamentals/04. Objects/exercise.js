@@ -79,14 +79,25 @@ function AddressConstructor(city, street, zipCode) {
 /**
  * Constructor function
  */
-let post = new Post("a", "b", "c");
-console.log(post);
+// let post = new Post("a", "b", "c");
+// console.log(post);
 
-function Post(title, body, author) {
-  this.title = title;
-  this.body = body;
-  this.author = author;
-  this.view = 0;
-  this.comment = [];
-  this.isLive = false;
-}
+// function Post(title, body, author) {
+//   this.title = title;
+//   this.body = body;
+//   this.author = author;
+//   this.view = 0;
+//   this.comment = [];
+//   this.isLive = false;
+// }
+
+/**
+ * Price Range
+ */
+let priceRanges = [
+  { label: "$", tooltip: "Inexpensive", minPerPerson: 1, maxPerPerson: 10 },
+  { label: "$$", tooltip: "Modrate", minPerPerson: 11, maxPerPerson: 20 },
+  { label: "$$$", tooltip: "Expensive", minPerPerson: 21, maxPerPerson: 50 },
+];
+
+let restaurant = [{ average: 5 }];

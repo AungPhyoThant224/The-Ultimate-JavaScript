@@ -18,19 +18,21 @@
 /**
  * Factory and Constructor Functions
  */
-function fruitFactory(name, color) {
+function addressFactory(city, street, zipCode) {
   return {
-    name,
-    color,
+    city,
+    street,
+    zipCode,
   };
 }
 
-function fruitConstructor(name, color) {
-  this.name = name;
-  this.color = color;
+function addressConstructor(city, street, zipCode) {
+  this.city = city;
+  this.street = street;
+  this.zipCode = zipCode;
 }
 
-const apple = fruitFactory("apple", "red");
-const orange = new fruitConstructor("orange", "orange");
-console.log("fruitFactory", apple);
+const apple = addressFactory("a", "b", "c");
+const orange = new addressConstructor("a", "b", "c");
+console.log("addressFactory", apple);
 console.log(orange);

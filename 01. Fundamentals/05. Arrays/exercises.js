@@ -36,22 +36,22 @@
 /**
  * Moving an Element
  */
-let array = [1, 2, 3, 4];
-console.log(move(array, 2, -1));
+// let array = [1, 2, 3, 4];
+// console.log(move(array, 2, -1));
 
 //-------------Mosh Solution-----------
-function move(array, index, offset) {
-  let position = index + offset;
-  if (!isValidOffset(array, position)) {
-    console.error("Invalid Offset");
-    return;
-  }
+// function move(array, index, offset) {
+//   let position = index + offset;
+//   if (!isValidOffset(array, position)) {
+//     console.error("Invalid Offset");
+//     return;
+//   }
 
-  const output = [...array];
-  const element = output.splice(index, 1)[0];
-  output.splice(position, 0, element);
-  return output;
-}
+//   const output = [...array];
+//   const element = output.splice(index, 1)[0];
+//   output.splice(position, 0, element);
+//   return output;
+// }
 
 //-------------My Solution--------------
 // function move(array, index, offset) {
@@ -78,9 +78,24 @@ function move(array, index, offset) {
 //   return newArr;
 // }
 
-function isValidOffset(array, position) {
-  if (position < 0 || position > array.length - 1) {
-    return false;
-  }
-  return true;
+// function isValidOffset(array, position) {
+//   if (position < 0 || position > array.length - 1) {
+//     return false;
+//   }
+//   return true;
+// }
+
+/**
+ * Count Occurrences
+ */
+
+console.log(countOccurrences([1, 2, 3, 4, 1], 1));
+function countOccurrences(array, searchElement) {
+  const result = array.reduce((accumulate, current) => {
+    if (current === searchElement) {
+      accumulate++;
+    }
+    return accumulate;
+  }, 0);
+  return result;
 }

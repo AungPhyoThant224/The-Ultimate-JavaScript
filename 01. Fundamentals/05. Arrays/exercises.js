@@ -103,12 +103,30 @@
 /**
  * Get Max
  */
-console.log(getMax([1, 2, 13, 4, 10, 20]));
-function getMax(array) {
-  if (array.length === 0) {
-    return;
-  }
-  let max = array.reduce(
-    (accumulator, current) => (current > accumulator) ? current : accumulator);
-  return max;
-}
+// console.log(getMax([1, 2, 13, 4, 10, 20]));
+// function getMax(array) {
+//   if (array.length === 0) {
+//     return;
+//   }
+//   let max = array.reduce(
+//     (accumulator, current) => (current > accumulator) ? current : accumulator);
+//   return max;
+// }
+
+/**
+ * Movies
+ */
+let movies = [
+  { title: 'a', year: 2018, rating: 4.5 },
+  { title: 'b', year: 2018, rating: 4.2 },
+  { title: 'c', year: 2018, rating: 3 },
+  { title: 'd', year: 2017, rating: 4.7 },
+];
+
+let filtered = movies.filter((movie) => (movie.year === 2018 && movie.rating > 4));
+
+let sorted = filtered.sort((a, b) => {
+  if (a.rating > b.rating) return -1;
+  if (a.rating < b.rating) return 1;
+  return 0;
+}).reverse().map(m => console.log(m.title));

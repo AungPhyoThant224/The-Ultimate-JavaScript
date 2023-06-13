@@ -32,7 +32,31 @@ function addressConstructor(city, street, zipCode) {
   this.zipCode = zipCode;
 }
 
-const apple = addressFactory("a", "b", "c");
-const orange = new addressConstructor("a", "b", "c");
-console.log("addressFactory", apple);
-console.log(orange);
+// const address1 = addressFactory("a", "b", "c");
+// const address2 = new addressConstructor("a", "b", "c");
+// console.log("addressFactory", apple);
+// console.log(orange);
+
+/**
+ * Object Equality
+ */
+
+const addr = new addressConstructor("a", "b");
+const addr1 = new addressConstructor("a", "b");
+const addr2 = addr1;
+console.log(areEqual(addr, addr1));
+console.log(areSame(addr, addr1));
+console.log(areSame(addr1, addr2));
+
+function areEqual(address1, address2) {
+  for (let data in address1) {
+    if (address1[data] !== address2[data]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function areSame(address1, address2) {
+  return address1 === address2;
+}

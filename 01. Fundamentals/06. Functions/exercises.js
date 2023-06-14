@@ -24,11 +24,32 @@
 /**
  * Area of Circle
  */
-let circle = {
-    radius: 2,
-    get area() {
-        return Math.PI * this.radius * this.radius;
-    }
+// let circle = {
+//     radius: 2,
+//     get area() {
+//         return Math.PI * this.radius * this.radius;
+//     }
+// }
+// console.log(circle.radius);
+// console.log(circle.area);
+
+/**
+ * Error Handling
+ */
+try {
+    console.log(countOccurrences(null, 1));
+} catch (error) {
+    console.log(error);
 }
-console.log(circle.radius);
-console.log(circle.area);
+function countOccurrences(array, searchElement) {
+    if (!Array.isArray(array)) {
+        throw new Error("First input must be array");
+    }
+    const result = array.reduce((accumulate, current) => {
+        if (current === searchElement) {
+            accumulate++;
+        }
+        return accumulate;
+    }, 0);
+    return result;
+}

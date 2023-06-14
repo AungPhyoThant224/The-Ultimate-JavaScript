@@ -24,7 +24,7 @@ const tags = {
     title: 'a',
     tags: ['a', 'b', 'c'],
     getTags() {
-        this.tags.forEach((tag) => {
+        this.tags.forEach(function (tag) {
             console.log(this.title, tag);
         }, this)
     }

@@ -4,27 +4,27 @@
  */
 
 //Example 1
-let x = 10;
-let y = x;
-x = 20;
-console.log(y);
-
-let a = { value: 10 };
+let a = 10;
 let b = a;
-a.value = 20;
+a = 20;
 console.log(b);
+
+let x = { value: 10 };
+let y = x;
+x.value = 20;
+console.log(y);
 
 //Example 2
 let number = 10;
 function increament(num) {
-  num++;
+    num++;
 }
 increament(number);
 console.log(number);
 
 let obj = { value: 10 };
-function increament1(obj) {
-  obj.value++;
+function increase(object) {
+    object.value++;
 }
-increament1(obj);
+increase(obj);
 console.log(obj);

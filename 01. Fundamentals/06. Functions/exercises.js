@@ -39,7 +39,7 @@ console.log(circle.area);
 try {
     console.log(countOccurrences(null, 1));
 } catch (error) {
-    console.log(error);
+    console.error(error);
 }
 function countOccurrences(array, searchElement) {
     if (!Array.isArray(array)) {

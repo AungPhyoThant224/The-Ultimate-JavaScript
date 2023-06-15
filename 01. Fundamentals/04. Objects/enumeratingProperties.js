@@ -21,7 +21,7 @@ for (let key of Object.keys(circle)) {
 }
 
 /**
- * entry will get the list of Key, Value pari of Objects
+ * entry will get the list of Key, Value pair of Objects
  * Object.entries(circle) return the list of Keys, Value pairs of
  * circle object
  */

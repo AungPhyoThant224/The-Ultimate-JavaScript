@@ -1,4 +1,4 @@
-function Cricle(radius) {
+function Circle(radius) {
     //Instance Members
     this.radius = radius;
     this.move = function () {
@@ -8,16 +8,16 @@ function Cricle(radius) {
 }
 
 //Prototype Members
-Cricle.prototype.draw = function () {
+Circle.prototype.draw = function () {
     console.log('Draw');
 }
 
-Cricle.prototype.toString = function () {
+Circle.prototype.toString = function () {
     //can use from Instance Members
     return 'Circle radius = ' + this.radius;
 }
 
-let c1 = new Cricle(1);
+let c1 = new Circle(1);
 
 c1.move(); // can use from Instance Members
 console.log(c1.toString()); // can use from Prototype Members

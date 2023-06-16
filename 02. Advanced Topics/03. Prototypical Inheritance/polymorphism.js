@@ -11,9 +11,17 @@ Shape.prototype.duplicate = function () {
 function Circle() { }
 extend(Circle, Shape);
 Circle.prototype.duplicate = function () {
-    Shape.prototype.duplicate(); // Simply call from parent
-    // Shape.prototype.duplicate.call(this); // If we need to used this
     console.log('Duplicate Circle');
 }
 
-let c = new Circle();
+function Square() { }
+extend(Square, Shape);
+
+const shapes = [
+    new Circle(),
+    new Square(),
+];
+
+for (let shape of shapes) {
+    shape.duplicate();
+}

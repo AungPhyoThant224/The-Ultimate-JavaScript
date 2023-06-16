@@ -14,9 +14,7 @@ function Circle(radius, color) {
     Shape.call(this, color); // Super Constructor
     this.radius = radius;
 }
-
 extend(Circle, Shape);
-
 Circle.prototype.draw = function () {
     console.log('Draw');
 }

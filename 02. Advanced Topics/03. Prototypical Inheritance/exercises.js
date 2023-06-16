@@ -2,16 +2,16 @@
  * Prototypical Inheritance
  */
 
-function HTMLElement() {
+function HtmlElement() {
     this.click = function () {
         console.log('Clicked');
     }
 }
-HTMLElement.prototype.focus = function () {
+HtmlElement.prototype.focus = function () {
     console.log('Focused');
 }
 
-function HTMLSelectElement(items = []) {
+function HtmlSelectElement(items = []) {
     this.items = items;
 
     this.addItem = function (value) {
@@ -26,16 +26,41 @@ function HTMLSelectElement(items = []) {
             console.log('Invalid value');
         }
     }
-}
 
-// HTMLSelectElement.prototype = Object.create(HTMLElement.prototype);
-// HTMLSelectElement.prototype.click = function () {
-//     HTMLElement.prototype.click();
+    this.render = function () {
+        return `<select>${this.items.map(item =>
+            `<option>${item}</option>`
+        ).join('')}</select>`
+    }
+}
+// HtmlSelectElement.prototype = Object.create(HtmlElement.prototype);
+// HtmlSelectElement.prototype.click = function () {
+//     HtmlElement.prototype.click();
 // }
 
-HTMLSelectElement.prototype = new HTMLElement()
-HTMLSelectElement.prototype.constructor = HTMLSelectElement;
+HtmlSelectElement.prototype = new HtmlElement()
+HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 
+let h = new HtmlElement();
+let s = new HtmlSelectElement([1, 2]);
 
-let h = new HTMLElement();
-let s = new HTMLSelectElement([1, 2]);
+/**
+ * Polymorphism
+ */
+function HtmlImageElement(src) {
+    this.src = src;
+    this.render = function () {
+        return `<img src=${this.src} />`
+    }
+}
+HtmlImageElement.prototype = new HtmlElement()
+HtmlImageElement.prototype.constructor = HtmlImageElement;
+
+let elements = [
+    new HtmlSelectElement([1, 2]),
+    new HtmlImageElement('http://')
+];
+
+for (let element of elements) {
+    console.log(element.render());
+}

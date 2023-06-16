@@ -1,5 +1,5 @@
-const _radius = WeakMap();
-const _move = WeakMap();
+const _radius = new WeakMap();
+const _move = new WeakMap();
 
 class Circle {
     constructor(radius) {
